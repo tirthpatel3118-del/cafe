@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recharge Cafe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Waiter Ordering MVP</p>
+        <h1>Recharge Cafe</h1>
+        <p class="subcopy">Clean, fast table-side ordering for the first build.</p>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="panel tables-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-label">Tables</p>
+            <h2>Select Table</h2>
+          </div>
+          <div class="status-legend">
+            <span><i class="dot dot-empty"></i>Empty</span>
+            <span><i class="dot dot-occupied"></i>Active</span>
+            <span><i class="dot dot-ready"></i>Ready</span>
+          </div>
+        </div>
+        <div id="tablesGrid" class="tables-grid"></div>
+      </section>
+
+      <section class="panel menu-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-label">Menu</p>
+            <h2>Order Items</h2>
+          </div>
+          <div class="table-badge">
+            Serving <strong id="selectedTableText">Table 1</strong>
+          </div>
+        </div>
+
+        <label class="search-field" for="searchInput">
+          <span>Search item</span>
+          <input id="searchInput" type="search" placeholder="Search coffee, pizza, shake...">
+        </label>
+
+        <div id="categoryFilters" class="category-filters"></div>
+        <div id="menuGrid" class="menu-grid"></div>
+      </section>
+
+      <aside class="panel cart-panel">
+        <div class="panel-header">
+          <div>
+            <p class="panel-label">Cart</p>
+            <h2>Current Order</h2>
+          </div>
+          <button id="cancelEditButton" class="ghost-button inline-ghost is-hidden" type="button">Cancel Edit</button>
+        </div>
+
+        <div id="cartModeBanner" class="cart-mode-banner is-hidden"></div>
+
+        <div class="cart-meta">
+          <div>
+            <span>Selected table</span>
+            <strong id="cartTableText">Table 1</strong>
+          </div>
+          <div>
+            <span>Total items</span>
+            <strong id="cartCountText">0</strong>
+          </div>
+        </div>
+
+        <div id="cartList" class="cart-list"></div>
+
+        <div class="cart-summary">
+          <div>
+            <span>Estimated total</span>
+            <strong id="cartTotalText">Rs. 0</strong>
+          </div>
+          <button id="placeOrderButton" class="primary-button" type="button">Place Order</button>
+        </div>
+      </aside>
+    </main>
+
+    <section class="panel orders-panel">
+      <div class="panel-header">
+        <div>
+          <p class="panel-label">Orders</p>
+          <h2>Active Orders</h2>
+        </div>
+        <p class="orders-help">Tap edit to reopen a placed order.</p>
+      </div>
+      <div id="ordersList" class="orders-list"></div>
+    </section>
+  </div>
+
+  <script src="menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
